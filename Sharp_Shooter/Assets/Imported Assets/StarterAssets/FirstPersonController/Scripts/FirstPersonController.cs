@@ -122,6 +122,12 @@ namespace StarterAssets
 			CameraRotation();
 		}
 
+		// zoom 감도 설정
+		public void ChangeRotationSpeed(float amount)
+		{
+			RotationSpeed = amount;
+		}
+
 		private void GroundedCheck()
 		{
 			// set sphere position, with offset
