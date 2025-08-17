@@ -46,7 +46,7 @@ namespace StarterAssets
 			SprintInput(value.isPressed);
 		}
 
-		//왼쪽 마우스나 패드의 오른쪽 눌린 정보 전달 (항상true)
+		//왼쪽 마우스나 패드의 오른쪽 눌린 정보 전달
 		public void OnShoot(InputValue value)
 		{
 			ShootInput(value.isPressed);
