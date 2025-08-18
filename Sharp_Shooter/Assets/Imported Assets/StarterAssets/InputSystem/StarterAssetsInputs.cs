@@ -23,6 +23,11 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
+		void Start()
+		{
+			SetCursorState(true);
+		}
+
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
 		{
@@ -93,12 +98,13 @@ namespace StarterAssets
 
 		private void OnApplicationFocus(bool hasFocus)
 		{
-			SetCursorState(cursorLocked);
+			SetCursorState(cursorLocked); // 기본적으로 커서 숨기기
 		}
 
-		private void SetCursorState(bool newState)
+		// 커서 숨기기 설정 메소드
+		public void SetCursorState(bool newState)
 		{
-			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None; // 삼항 연산자
 		}
 	}
 	
