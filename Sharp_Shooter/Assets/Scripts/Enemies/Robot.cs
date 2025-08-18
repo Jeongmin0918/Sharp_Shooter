@@ -22,8 +22,7 @@ public class Robot : MonoBehaviour
     void Update()
     {
         if (!player) return; // 플레이어가 사라졌다면
-        // 프레임마다 플레이어의 현재 위치를 읽어서 경로 갱신
-        agent.SetDestination(player.transform.position);
+        agent.SetDestination(player.transform.position); // 프레임마다 플레이어의 위치 갱신 후 추적
     }
 
     // Player의 Trigger 범위에 들어가면 폭발
@@ -32,7 +31,7 @@ public class Robot : MonoBehaviour
         if (other.CompareTag(PLAYER_STRING))
         {
             EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
-            enemyHealth.SelfDestruct();
+            enemyHealth.SelfDestruct(); // 로봇과 충돌 시 로봇 폭발
         }
     }
 }

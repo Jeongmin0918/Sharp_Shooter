@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] float speed = 30f;
-    [SerializeField] GameObject projectileHitVFX;
+    [SerializeField] float speed = 30f; // 총알 속도
+    [SerializeField] GameObject projectileHitVFX; // 폭발 효과
 
     Rigidbody rb;
 
@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
 
     public void Init(int damage)
     {
-        this.damage = damage;
+        this.damage = damage; // 데미지를 다시 할당
     }
 
     void OnTriggerEnter(Collider other)
@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
         playerHealth?.TakeDamage(damage); // null 이 아닐 때
 
-        Instantiate(projectileHitVFX, transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
+        Instantiate(projectileHitVFX, transform.position, Quaternion.identity); // 폭발 효과
+        Destroy(this.gameObject); // 총알 제거
     }
 }

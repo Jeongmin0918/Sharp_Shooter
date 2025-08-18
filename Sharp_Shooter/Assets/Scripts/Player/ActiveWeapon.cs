@@ -5,27 +5,26 @@ using TMPro;
 
 public class ActiveWeapon : MonoBehaviour
 {
-    [SerializeField] WeaponSO startingWeapon;
-    [SerializeField] CinemachineCamera playerFollowCamera;
-    [SerializeField] Camera weaponCamera;
-    [SerializeField] GameObject zoomVignette;
-    [SerializeField] TMP_Text ammoText;
-    [SerializeField] LayerMask muzzleOnlyMask;
+    [SerializeField] WeaponSO startingWeapon; // 시작 무기
+    [SerializeField] CinemachineCamera playerFollowCamera; // 플레이어 카메라
+    [SerializeField] Camera weaponCamera; // 무기 전용 카메라
+    [SerializeField] GameObject zoomVignette; // 줌 시 효과
+    [SerializeField] TMP_Text ammoText; // 탄약 이미지
+    [SerializeField] LayerMask muzzleOnlyMask; // 줌 시 총구만 보이게 하기
 
-    WeaponSO currentWeaponSO;
-    Animator animator;
+    WeaponSO currentWeaponSO; // 현재 무기 데이터 (탄약 보충을 위해)
+    Weapon currentWeapon; // 현재 무기 오브젝트 (무기마다 효과가 다르기 때문에)
+    Animator animator; 
     StarterAssetsInputs starterAssetsInputs;
     FirstPersonController firstPersonController;
-    Weapon currentWeapon; // 현재 무기
 
     const string SHOOT_STRING = "Shoot";
 
-    // 발사 쿨타임 설정
-    float timeSinceLastShot = 0f;
-    float defaultFOV;
-    float defaultRotationSpeed;
+    float timeSinceLastShot = 0f;    // 발사 쿨타임
+    float defaultFOV; // 기본 시야각
+    float defaultRotationSpeed; // 기본 회전 감도
     int currentAmmo; // 현재 탄약 수
-    int originalWeaponMask;
+    int originalWeaponMask; // 무기 카메라 기본 마스크
 
     void Awake()
     {
@@ -46,13 +45,13 @@ public class ActiveWeapon : MonoBehaviour
     void Start()
     {
         SwitchWeapon(startingWeapon); // 선택한 무기 장착 + 탄약
-        AdjustAmmo(currentWeaponSO.MagazineSize);
+        AdjustAmmo(currentWeaponSO.MagazineSize); // 탄창 할당
     }
 
     void Update()
     {
-        HandleShoot();
-        HandleZoom();
+        HandleShoot(); // 발사 입력 처리
+        HandleZoom(); // 줌 처리
     }
 
     public void AdjustAmmo(int amount)
@@ -73,9 +72,10 @@ public class ActiveWeapon : MonoBehaviour
     {
         if (currentWeapon)
         {
-            Destroy(currentWeapon.gameObject);
+            Destroy(currentWeapon.gameObject); // 현재 무기 파괴
         }
 
+        // 새 무기로 교체
         Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponent<Weapon>();
         currentWeapon = newWeapon;
         this.currentWeaponSO = weaponSO;

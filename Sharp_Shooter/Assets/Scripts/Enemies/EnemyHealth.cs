@@ -17,25 +17,25 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         gameManager = FindFirstObjectByType<GameManager>(); 
-        gameManager.AdjustEnemiesLeft(1); // 남은 적 수
+        gameManager.AdjustEnemiesLeft(1); // 시작 적 1
     }
 
     // 데미지
     public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
+        currentHealth -= amount; // 총에 따라 데미지가 다름
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0) // 체력이 0 아래면
         {
             gameManager.AdjustEnemiesLeft(-1);
             SelfDestruct();
         }
     }
 
-    // 로봇 파괴
+    // 로봇과 충돌 시 폭발
     public void SelfDestruct()
     {
-        Instantiate(robotExplosionVFX, transform.position, Quaternion.identity); // 오브젝트를 새로 복제하는 함수
+        Instantiate(robotExplosionVFX, transform.position, Quaternion.identity); // 프리팹이나 오브젝트를 새로 복제하는 함수
         Destroy(this.gameObject);
     }
 }

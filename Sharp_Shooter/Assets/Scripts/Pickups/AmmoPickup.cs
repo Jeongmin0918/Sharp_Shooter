@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class AmmoPickup : Pickup
 {
-    [SerializeField] int ammoAmount = 100;
+    [SerializeField] int ammoAmount = 100; // 줍는 탄약 양
     
     protected override void OnPickup(ActiveWeapon activeWeapon)
     {
-        activeWeapon.AdjustAmmo(ammoAmount); // 탄약이 많더라도 수량 제한
+        activeWeapon.AdjustAmmo(ammoAmount); // 탄약 수가 넘더라도 수량 제한
     }
 }
