@@ -14,7 +14,7 @@ public class ActiveWeapon : MonoBehaviour
 
     WeaponSO currentWeaponSO; // 현재 무기 데이터 (탄약 보충을 위해)
     Weapon currentWeapon; // 현재 무기 오브젝트 (무기마다 효과가 다르기 때문에)
-    Animator animator; 
+    Animator animator;
     StarterAssetsInputs starterAssetsInputs;
     FirstPersonController firstPersonController;
 
@@ -37,7 +37,7 @@ public class ActiveWeapon : MonoBehaviour
             defaultFOV = playerFollowCamera.Lens.FieldOfView;
         else
             Debug.LogError("ActiveWeapon: CinemachineCamera 참조가 없습니다. 인스펙터에 할당하거나 씬에 존재하는지 확인하세요.");
-            
+
         if (weaponCamera != null)
             originalWeaponMask = weaponCamera.cullingMask;
     }
@@ -135,7 +135,7 @@ public class ActiveWeapon : MonoBehaviour
             {
                 weaponCamera.enabled = true;                       // 평소엔 켜두고
                 weaponCamera.cullingMask = originalWeaponMask;     // 원래 마스크 복원(무기+머즐)
-                weaponCamera.fieldOfView = defaultFOV;  
+                weaponCamera.fieldOfView = defaultFOV;
             }
 
             if (zoomVignette != null) zoomVignette.SetActive(false);

@@ -27,7 +27,6 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0) // 체력이 0 아래면
         {
-            gameManager.AdjustEnemiesLeft(-1);
             SelfDestruct();
         }
     }
@@ -37,5 +36,6 @@ public class EnemyHealth : MonoBehaviour
     {
         Instantiate(robotExplosionVFX, transform.position, Quaternion.identity); // 프리팹이나 오브젝트를 새로 복제하는 함수
         Destroy(this.gameObject);
+        gameManager.AdjustEnemiesLeft(-1); // 남은 적 수 -1
     }
 }

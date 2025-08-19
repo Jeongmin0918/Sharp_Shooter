@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   robotExplosionVFX: {fileID: 5165590850133639682, guid: 30e315dbab606654ab4eb6a9f8893df4, type: 3}
-  startingHealth: 3
+  startingHealth: 2
 --- !u!195 &8299529459348233905
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

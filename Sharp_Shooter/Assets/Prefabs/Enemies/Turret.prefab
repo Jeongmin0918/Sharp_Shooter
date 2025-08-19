@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   robotExplosionVFX: {fileID: 5165590850133639682, guid: 30e315dbab606654ab4eb6a9f8893df4, type: 3}
-  startingHealth: 3
+  startingHealth: 2
 --- !u!114 &8910413231629683069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   playerTargetPoint: {fileID: 0}
   projectileSpawnPoint: {fileID: 7889705127424444435}
   fireRate: 2
-  damage: 2
+  damage: 1
 --- !u!1 &1769598274479959651
 GameObject:
   m_ObjectHideFlags: 0

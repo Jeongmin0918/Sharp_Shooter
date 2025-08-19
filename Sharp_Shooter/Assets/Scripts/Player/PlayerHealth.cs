@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Transform weaponCamera; // 무기 카메라 (벽을 뚫는 경우가 있어서)
     [SerializeField] Image[] shieldBars; // 체력바 이미지
     [SerializeField] GameObject gameoverContainer; //Game Over 화면
+    [SerializeField] GameObject nextlevelContainer; //Next Level 화면
+    [SerializeField] GameObject gameclearContainer; //Game Clear 화면
 
     int currentHealth; // 현재 체력
     int gameOverVirtualCameraPriority = 20; // 카메라 우선순위를 활용 해 사망 시 카메라로
@@ -44,6 +46,20 @@ public class PlayerHealth : MonoBehaviour
     public void ShowGameOver(bool show)
     {
         gameoverContainer.SetActive(show); // Game Over Container 띄우기
+        StarterAssetsInputs starterAssetsInputs = FindFirstObjectByType<StarterAssetsInputs>();
+        starterAssetsInputs.SetCursorState(false); // 커서 숨기기 false
+    }
+
+    public void ShowNextLevel(bool show)
+    {
+        nextlevelContainer.SetActive(show); // Next Level Container 띄우기
+        StarterAssetsInputs starterAssetsInputs = FindFirstObjectByType<StarterAssetsInputs>();
+        starterAssetsInputs.SetCursorState(false); // 커서 숨기기 false
+    }
+
+    public void ShowGameClear(bool show)
+    {
+        gameclearContainer.SetActive(show); // Game Clear Container 띄우기
         StarterAssetsInputs starterAssetsInputs = FindFirstObjectByType<StarterAssetsInputs>();
         starterAssetsInputs.SetCursorState(false); // 커서 숨기기 false
     }

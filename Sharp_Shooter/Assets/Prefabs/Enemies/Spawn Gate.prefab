@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   robotExplosionVFX: {fileID: 5165590850133639682, guid: 30e315dbab606654ab4eb6a9f8893df4, type: 3}
-  startingHealth: 3
+  startingHealth: 2
 --- !u!114 &874303514626604562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnGate
   robotPrefab: {fileID: 593563540988952784, guid: 3b4f7a6573ac0f2449bee45c59f09839, type: 3}
-  spawnTime: 5
+  spawnTime: 10
   spawnPoint: {fileID: 4011027896642228085}
 --- !u!65 &3391672806083479353
 BoxCollider:
