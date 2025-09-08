@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] GameObject robotExplosionVFX; // 로봇 HP 0시 폭발
+    [SerializeField] GameObject BossAttackVFX; // 로봇 HP 0시 폭발
     [SerializeField] int startingHealth = 3; // 로봇 HP
 
     int currentHealth;
@@ -16,7 +17,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-        gameManager = FindFirstObjectByType<GameManager>(); 
+        gameManager = FindFirstObjectByType<GameManager>();
         gameManager.AdjustEnemiesLeft(1); // 시작 적 1
     }
 
@@ -37,5 +38,10 @@ public class EnemyHealth : MonoBehaviour
         Instantiate(robotExplosionVFX, transform.position, Quaternion.identity); // 프리팹이나 오브젝트를 새로 복제하는 함수
         Destroy(this.gameObject);
         gameManager.AdjustEnemiesLeft(-1); // 남은 적 수 -1
+    }
+    
+    public void BossAttack()
+    {
+        Instantiate(BossAttackVFX, transform.position, Quaternion.identity); // 프리팹이나 오브젝트를 새로 복제하는 함수
     }
 }

@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
             youWinText.SetActive(true);
             playerHealth.ShowNextLevel(true);
         }
-        else if (enemiesLeft <= 0 && current == 2) // level 3 라면
+        else if (enemiesLeft <= 0 && current == 3) // level 3 라면
         {
             playerHealth.ShowGameClear(true);
         }

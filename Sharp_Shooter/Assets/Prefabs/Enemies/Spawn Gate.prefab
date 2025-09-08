@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   robotExplosionVFX: {fileID: 5165590850133639682, guid: 30e315dbab606654ab4eb6a9f8893df4, type: 3}
+  BossAttackVFX: {fileID: 5165590850133639682, guid: 5dd530c02edecad4485480511be0599b, type: 3}
   startingHealth: 2
 --- !u!114 &874303514626604562
 MonoBehaviour:
