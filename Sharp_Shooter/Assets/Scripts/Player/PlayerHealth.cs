@@ -64,6 +64,18 @@ public class PlayerHealth : MonoBehaviour
         starterAssetsInputs.SetCursorState(false); // 커서 숨기기 false
     }
 
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+
+        if (currentHealth > startingHealth)
+        {
+            currentHealth = startingHealth; // 최대 HP 제한
+        }
+
+        AdjustShieldUI(); // UI 적용
+    }
+
     // ShieldBar 이미지 조정
     void AdjustShieldUI()
     {

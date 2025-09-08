@@ -123,12 +123,12 @@ public class ActiveWeapon : MonoBehaviour
                 weaponCamera.cullingMask = muzzleOnlyMask;   // 줌 중엔 '머즐만' 렌더
             }
 
-            if (zoomVignette != null) zoomVignette.SetActive(true);
-            firstPersonController.ChangeRotationSpeed(currentWeaponSO.ZoomRotationSpeed);
+            if (zoomVignette != null) zoomVignette.SetActive(true); // 줌 시 검은 동그란 이미지 키기
+            firstPersonController.ChangeRotationSpeed(currentWeaponSO.ZoomRotationSpeed); // 줌 시 감도
         }
         else
         {
-            lens.FieldOfView = defaultFOV;
+            lens.FieldOfView = defaultFOV; // 원래 값 복원
             playerFollowCamera.Lens = lens;
 
             if (weaponCamera != null)
