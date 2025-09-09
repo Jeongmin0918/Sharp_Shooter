@@ -117,11 +117,11 @@ GameObject:
   - component: {fileID: 558025854203032990}
   - component: {fileID: 8067452119817582850}
   - component: {fileID: 5184677790135016478}
-  - component: {fileID: 5092760152993695070}
   - component: {fileID: 4592239505659263162}
   - component: {fileID: 4910512998050567841}
   - component: {fileID: 7613325242998608734}
   - component: {fileID: 5013239260034664326}
+  - component: {fileID: 3846045722595267184}
   m_Layer: 6
   m_Name: 'Boss '
   m_TagString: Untagged
@@ -177,7 +177,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -189,21 +189,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5092760152993695070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960876558944135209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0b6343e07dccf644992503132b96931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  robotExplosionVFX: {fileID: 5165590850133639682, guid: 8eb81384d1399b74ba16a4a1b588f8f0, type: 3}
-  BossAttackVFX: {fileID: 5165590850133639682, guid: 5dd530c02edecad4485480511be0599b, type: 3}
-  startingHealth: 1
 --- !u!114 &4592239505659263162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +261,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f04b08d1b4e834ea7d8107f7445646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Boss
+--- !u!114 &3846045722595267184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960876558944135209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42e9c6ebcd4c2d4698aa05c51b64512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossHealth
+  hpIcons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  maxHealth: 100
+  BossAttackVFX: {fileID: 5165590850133639682, guid: 5dd530c02edecad4485480511be0599b, type: 3}
+  robotExplosionVFX: {fileID: 5165590850133639682, guid: 8eb81384d1399b74ba16a4a1b588f8f0, type: 3}
 --- !u!1 &1311594992904407921
 GameObject:
   m_ObjectHideFlags: 0

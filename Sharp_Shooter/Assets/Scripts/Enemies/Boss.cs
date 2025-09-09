@@ -31,8 +31,10 @@ public class Boss : MonoBehaviour
     {
         if (other.CompareTag(PLAYER_STRING))
         {
-            EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
-            enemyHealth.BossAttack(); // 로봇과 충돌 시 폭발 공격
+            BossHealth bossHealth = GetComponent<BossHealth>();
+            bossHealth.BossAttack();
+            // EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
+            // enemyHealth.BossAttack(); // 로봇과 충돌 시 폭발 공격
         }
     }
 }

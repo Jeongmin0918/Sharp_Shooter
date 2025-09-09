@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         enemiesLeftText.text = ENEMIES_LEFT_STRING + enemiesLeft.ToString();
 
         int current = SceneManager.GetActiveScene().buildIndex;
-        if (enemiesLeft <= 0 && current <= 1) // 만약 적이 없다면 승리 UI + Game Over UI
+        if (enemiesLeft <= 0 && current <= 2) // 만약 적이 없다면 승리 UI + Game Over UI
         {
             youWinText.SetActive(true);
             playerHealth.ShowNextLevel(true);
@@ -61,11 +61,6 @@ public class GameManager : MonoBehaviour
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex; // 현재 단계가 어디인지 scene을 저장
         SceneManager.LoadScene(currentScene); // 재시작
-    }
-
-    public void Level1Button() // 레벨 1부터 시작
-    {
-        SceneManager.LoadScene(1); // 재시작
     }
 
     public void QuitButton() // 게임 종료 버튼

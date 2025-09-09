@@ -19,13 +19,15 @@ public class Weapon : MonoBehaviour
         impulseSource.GenerateImpulse(); // 반동 효과
 
         RaycastHit hit;
-        
+
         // 플레이어가 총을 쏠 때
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, interactionLayers, QueryTriggerInteraction.Ignore))
         {
             Instantiate(weaponSO.HitVFXPrefab, hit.point, Quaternion.identity); // VFX 효과 추가 (사망 시)
             EnemyHealth enemyHealth = hit.collider.GetComponentInParent<EnemyHealth>(); // 터렛에 적용하기 위해 InParent 사용
             enemyHealth?.TakeDamage(weaponSO.Damage); // enemyHealth가 존재한다면 TakeDamage를 사용해 damageAmount 전달
+            BossHealth bossHealth = hit.collider.GetComponentInParent<BossHealth>();
+            bossHealth?.TakeDamage(weaponSO.Damage);
 
         }
     }
